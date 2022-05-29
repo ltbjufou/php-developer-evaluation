@@ -1,0 +1,28 @@
+{
+    "name": "ltbjufou/php-developer-evaluation",
+    "description": "PHP developer evaluation",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Kostas Bolontzakis",
+            "email": "kbolontzakis@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^7.4",
+        "symfony/console": "^5.4"
+    },
+    "require-dev": {
+        "symfony/test-pack": "^1.0"
+    }
+}

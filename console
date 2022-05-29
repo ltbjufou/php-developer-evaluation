@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . "/vendor/autoload.php";
+
+use App\Command\AutoQuestion1Question2Command;
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\CommandLoader\FactoryCommandLoader;
+
+$application = new Application();
+
+$commandLoader = new FactoryCommandLoader([
+    'app:auto-question1-question2' => function () { return new AutoQuestion1Question2Command(); },
+]);
+
+$application->register(\App\Command\AutoQuestion1Question2Command::class);
+$application->setCommandLoader($commandLoader);
+$application->run();

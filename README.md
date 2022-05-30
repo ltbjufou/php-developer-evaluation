@@ -9,8 +9,9 @@ Composer is required.
 
 ### Prerequisites
 
-1. Operating system: Linux
+1. Operating system: Linux Ubuntu
 2. Docker
+3. Zip extension and unzip command
 
 ## Download the files
 Go to following folder and clone the project from git, 
@@ -35,6 +36,10 @@ At the root of the project, enter the container PHP-FPM with:
 
 `docker-compose exec php-fpm bash`
 
+Go to the root path:
+
+`var/www/php-developer-evaluation` with `cd /var/www/php-developer-evaluation`
+
 Install Composer using the instructions here:
 
 https://getcomposer.org/download/
@@ -50,6 +55,18 @@ After the successful installation of composer in our docker PHP-FPM container,
 let's execute to install the dependencies:
 
 `php composer.phar install`
+
+Note: It is possible you will see an error at the composer install like this:
+
+`The zip extension and unzip command are both missing, skipping.`
+
+Please execute the following inside the container:
+
+`apt update`
+
+`apt install zip unzip`
+
+And then try againg the composer install.
 
 ## Use
 
